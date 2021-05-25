@@ -1,2 +1,122 @@
-1
-feDiffuseLighting
+/* https://www.freecodecamp.org/news/use-css-selectors-to-style-webpage/
+Present selector
+
+a[title] {
+color: khaki;
+background: grey; 
+}
+In the example above, our present selector will find any a element that has a title attribute and apply the style definition to them. All other a elements that don't have a title attribute will not be styled as per above.
+
+
+Equals selector (=)
+
+This attribute selector finds an element with an exact match attribute value. To use this selector, you state the attribute name followed by an = (equals) to find the exact match of the value.
+a[href="<https://peterlunch.com/>"] {
+color: purple;
+} In the example above, the equals selector will find any a element that has an href attribute with the exact value of "https://peterlunch.com/".
+
+
+
+
+Begins with selector (^)
+
+a[href^="https"] {
+color: yellow;
+text-decoration: none;
+} In the example above the begins with selector finds any a element that has an href attribute and that begins with "https".
+This attribute selector finds any element that begins with a value you specify. To use this selector you state the attribute you are looking for, followed by the ^ and = characters and then the value you are looking to match.
+
+
+Ends with selector ($)
+
+img[src$="/blog-imgs"] {
+border-radius: 4px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} the above example the ends with selector finds any img element that has an src ending with "/blog-imgs". This is one I actually use for my website.
+
+Contains selector (*)
+
+a[href*="peterlunch"] {
+color: green;
+}In the abov example the contains attribute selector finds any a element that has an href that contains the value "peterlunch".
+This attribute selector finds any element that contains the value you are looking for somewhere in the attributes value. This means that the value must contain at least one occurrence of the value.
+
+
+White space selector (~)
+Hypen selector (|)
+
+
+Combination selectors
+The next advanced CSS selectors are combination selectors. These selectors can combine more than one CSS selector. There are four types of combination selectors in CSS:
+
+Descendant selectors
+Child selectors
+Adjacent sibling selectors
+General sibling selectors
+
+To understand how these selectors work, you must first understand that HTML follows a family tree hierarchy. This means that there is a parent element which can contain children, and the children can have children, and so on and so forth like a family tree.
+
+<div> <!--parent-->
+<p> <!--div child-->
+<article> <!--div child, parent to h1 & p-->	 
+    <h1>
+        <p></p>
+    </h1>
+</article>
+<article>	
+    <h1>
+        <p></p>
+        <p></p>
+    </h1>
+</article>
+</div>
+
+In the example above, the div is the parent, its children are the article elements, and the articles are parents to the h1 and p children.
+
+Descendant combination selector
+
+The descendant combination selector matches all elements that are descendants of a specified element.
+
+div p {
+line-height: 2em;
+}The above example selects all p elements inside of div elements.
+
+
+Child combination selector
+
+The child combination selector matches all elements that are children of a specific element. This is different to the descendant combination selector, as it only selects direct children of the parent element.
+
+div > p {
+color: aquamarine;
+} Referring to our HTML hierarchy example above, this selector will only find the first p tag and not the p tags within the article tags. It does this as they are not direct children of the parent div element.
+Adjacent sibling combination selector
+
+Adjacent Sibling selectors are denoted using a + which separates two selectors and matches the second selector element only if it immediately follows the first element.
+
+img + p {
+font-size: 10px;
+color: grey;
+font-style: italic;
+} In the example above, any p element that follows an image will be styled with the above definition.
+
+
+General sibling combination selector
+
+The general sibling selector selects any elements that are siblings of an element. General sibling selectors are denoted with a ~ character.
+
+article ~ h1 {
+font-weight: 900;
+}
+
+In the example above it selects all h1 elements that are siblings of article elements.
+
+Pseudo-selectors
+Pseudo-selectors fall into two buckets. The first is pseudo-class selectors and the second is pseudo-element selectors.
+
+Firstly pseudo-class selectors select elements based on a certain state. You might have seen things like :hover or :active. These are the states of elements on your page. You can select elements based on whether that element is in the specified state.
+
+button:hover {
+background: red;
+}
+
+In the example above, when a user hovers over a button the background color will change to red.
